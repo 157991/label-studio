@@ -65,6 +65,26 @@ EXTRA_CSS = """
 [class*="promo-banner" i] {
   display: none !important;
 }
+
+/* 白标：登录页左侧 Logo 隐藏 */
+.login_page_new_ui .left .ls-logo {
+  display: none !important;
+}
+
+/* 白标：登录页底部 "Brought to you by" + Human Signal Logo 隐藏 */
+.login_page_new_ui .left .by {
+  display: none !important;
+}
+
+/* 白标：登录页左侧背景：科技感深蓝→紫色渐变 */
+.login_page_new_ui .left {
+  background: linear-gradient(135deg, #EFF6FF 0%, #E0E7FF 40%, #F5F3FF 100%) !important;
+}
+
+/* 白标：登录页左侧装饰图隐藏 */
+.login_page_new_ui .left:after {
+  display: none !important;
+}
 """
 
 

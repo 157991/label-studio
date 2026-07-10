@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"rm -rf label_studio/core/static/react-app/* && cp -r web/dist/apps/labelstudio/* label_studio/core/static/react-app/ && echo \\\"✅ 前端构建产物已复制到Django静态目录\\\" && ls -la label_studio/core/static/r...",
+  "error": "Exit code 1\ncp: target 'label_studio/core/static/react-app/' is not a directory",
+  "timestamp": "2026-07-05T14:37:18.379Z",
+  "retry_count": 1
+}

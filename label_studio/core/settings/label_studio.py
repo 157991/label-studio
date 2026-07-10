@@ -48,7 +48,7 @@ from label_studio.core.utils.common import collect_versions
 
 versions = collect_versions()
 
-# in Label Studio Community version, feature flags are always ON
+# in 智能标注平台 Community version, feature flags are always ON
 FEATURE_FLAGS_DEFAULT_VALUE = True
 # or if file is not set, default is using offline mode
 FEATURE_FLAGS_OFFLINE = get_bool_env('FEATURE_FLAGS_OFFLINE', True)

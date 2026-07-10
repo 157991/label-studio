@@ -4,7 +4,7 @@ export const defaultTipsCollection: TipsCollection = {
   projectCreation: [
     {
       title: "Did you know?",
-      content: "It’s easier to find the projects when you organize them into workspaces using Label Studio Enterprise.",
+      content: "It’s easier to find the projects when you organize them into workspaces using 智能标注平台 Enterprise.",
       closable: true,
       link: {
         label: "Learn more",
@@ -18,7 +18,7 @@ export const defaultTipsCollection: TipsCollection = {
     {
       title: "Unlock faster access provisioning",
       content:
-        "Streamline assigning staff to multiple projects by assigning them to workspaces in Label Studio Enterprise.",
+        "Streamline assigning staff to multiple projects by assigning them to workspaces in 智能标注平台 Enterprise.",
       closable: true,
       link: {
         label: "Learn more",
@@ -46,7 +46,7 @@ export const defaultTipsCollection: TipsCollection = {
     {
       title: "Did you know?",
       content:
-        "You can control access to specific projects and workspaces for internal team members and external annotators using Label Studio Enterprise.",
+        "You can control access to specific projects and workspaces for internal team members and external annotators using 智能标注平台 Enterprise.",
       closable: true,
       link: {
         label: "Learn more",
@@ -64,7 +64,7 @@ export const defaultTipsCollection: TipsCollection = {
       closable: true,
       link: {
         label: "Learn more",
-        url: "https://labelstud.io/guide/setup",
+        url: "https://label.smartai.cn/guide/setup",
         params: {
           experiment: "project_creation_tip",
           treatment: "templates",
@@ -74,11 +74,11 @@ export const defaultTipsCollection: TipsCollection = {
     {
       title: "Labeling for GenAI",
       content:
-        "Label Studio has templates available for supervised LLM fine-tuning, RAG retrieval ranking, RLHF, chatbot evaluation, and more.",
+        "智能标注平台 has templates available for supervised LLM fine-tuning, RAG retrieval ranking, RLHF, chatbot evaluation, and more.",
       closable: true,
       link: {
         label: "Explore templates",
-        url: "https://labelstud.io/templates/gallery_generative_ai",
+        url: "https://label.smartai.cn/templates/gallery_generative_ai",
         params: {
           experiment: "project_creation_tip",
           treatment: "genai_templates",
@@ -90,7 +90,7 @@ export const defaultTipsCollection: TipsCollection = {
     {
       title: "It looks like your team is growing!",
       content:
-        "Assign roles to your team using Label Studio Enterprise and control access to sensitive data at the project and workspace levels.",
+        "Assign roles to your team using 智能标注平台 Enterprise and control access to sensitive data at the project and workspace levels.",
       closable: true,
       link: {
         label: "Learn more",
@@ -103,7 +103,7 @@ export const defaultTipsCollection: TipsCollection = {
     },
     {
       title: "Want to simplify and secure logging in?",
-      content: "Enable Single Sign-On for your team using SAML, SCIM2 or LDAP with Label Studio Enterprise.",
+      content: "Enable Single Sign-On for your team using SAML, SCIM2 or LDAP with 智能标注平台 Enterprise.",
       closable: true,
       link: {
         label: "Learn more",
@@ -116,7 +116,7 @@ export const defaultTipsCollection: TipsCollection = {
     },
     {
       title: "Did you know?",
-      content: "Try Label Studio Starter Cloud, optimized for small teams and projects.",
+      content: "Try 智能标注平台 Starter Cloud, optimized for small teams and projects.",
       closable: true,
       link: {
         label: "Learn more",
@@ -144,7 +144,7 @@ export const defaultTipsCollection: TipsCollection = {
     {
       title: "Share knowledge with the community",
       content:
-        "Have questions or a tip to share with other Label Studio users? Join the community slack channel for the latest updates. ",
+        "Have questions or a tip to share with other 智能标注平台 users? Join the community slack channel for the latest updates. ",
       closable: true,
       link: {
         label: "Join the community",
@@ -158,11 +158,11 @@ export const defaultTipsCollection: TipsCollection = {
     {
       title: "Did you know?",
       content:
-        "Label Studio supports multiple points of integration with cloud storage, machine learning models, and popular tools to automate your machine learning pipeline.",
+        "智能标注平台 supports multiple points of integration with cloud storage, machine learning models, and popular tools to automate your machine learning pipeline.",
       closable: true,
       link: {
         label: "Check out the integrations directory",
-        url: "https://labelstud.io/integrations/",
+        url: "https://label.smartai.cn/integrations/",
         params: {
           experiment: "organization_page_tip",
           treatment: "integration_points",
@@ -172,9 +172,9 @@ export const defaultTipsCollection: TipsCollection = {
   ],
   projectSettings: [
     {
-      title: "Apply your AWS spend to Label Studio Enterprise",
+      title: "Apply your AWS spend to 智能标注平台 Enterprise",
       content:
-        "Label Studio Enterprise is now available on the AWS Marketplace so you can use your committed spend to streamline data labeling workflows.",
+        "智能标注平台 Enterprise is now available on the AWS Marketplace so you can use your committed spend to streamline data labeling workflows.",
       closable: true,
       link: {
         label: "Learn more",
@@ -202,7 +202,7 @@ export const defaultTipsCollection: TipsCollection = {
     {
       title: "Did you know?",
       content:
-        "You can increase the quality of your labeled data with reviewer workflows and task agreement scores using Label Studio Enterprise.",
+        "You can increase the quality of your labeled data with reviewer workflows and task agreement scores using 智能标注平台 Enterprise.",
       closable: true,
       link: {
         label: "Learn more",
@@ -243,7 +243,7 @@ export const defaultTipsCollection: TipsCollection = {
     },
     {
       title: "Did you know?",
-      content: "Try Label Studio Starter Cloud, optimized for small teams and projects.",
+      content: "Try 智能标注平台 Starter Cloud, optimized for small teams and projects.",
       link: {
         label: "Learn more",
         url: "https://humansignal.com/pricing/",
@@ -259,7 +259,7 @@ export const defaultTipsCollection: TipsCollection = {
       closable: true,
       link: {
         label: "Learn more",
-        url: "https://labelstud.io/guide/ml",
+        url: "https://label.smartai.cn/guide/ml",
         params: {
           experiment: "project_settings_tip",
           treatment: "connect_ml_models",

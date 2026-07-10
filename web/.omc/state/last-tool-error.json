@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"sleep 40 && echo \\\"=== Checking frontend dev server (8010) ===\\\" && curl -s http://localhost:8010/react-app/main.js | grep -o \\\"lsf-mark\\\" | head -5 && echo \\\"\\\" && echo \\\"=== Server check...",
+  "error": "Exit code 7\n=== Checking frontend dev server (8010) ===\n\n=== Server checks ===\nFrontend (8010): 504\r\nBackend (8080): 000",
+  "timestamp": "2026-07-05T10:25:47.736Z",
+  "retry_count": 1
+}
