@@ -167,6 +167,55 @@ module.exports = composePlugins(
             localIdentName: "[local]--[hash:base64:5]",
           };
         }
+
+        // Inject prefix plugin into postcss-loader for .prefix.css files
+        // This handles GLOBAL imports (import './x.prefix.css') where
+        // css-loader modules never run, so getLocalIdent is never called.
+        const postcssLoader = oneOfRule.use.find(
+          (use) => use.loader?.includes("postcss-loader"),
+        );
+        if (postcssLoader) {
+          const prevLoaderOptions = postcssLoader.options ?? {};
+          postcssLoader.options = {
+            ...prevLoaderOptions,
+            postcssOptions: (loaderContext) => {
+              const prevOptions =
+                typeof prevLoaderOptions.postcssOptions === "function"
+                  ? prevLoaderOptions.postcssOptions(loaderContext)
+                  : prevLoaderOptions.postcssOptions ?? {};
+              const plugins = [...(prevOptions.plugins ?? [])];
+              plugins.unshift({
+                postcssPlugin: "prefix-lsf",
+                Once(root) {
+                  const sourcePath = root.source?.input?.file || "";
+                  if (!sourcePath.endsWith(".prefix.css")) return;
+                  root.walkRules((rule) => {
+                    if (
+                      rule.parent?.type === "atrule" &&
+                      ["keyframes", "-webkit-keyframes", "-moz-keyframes", "font-face"].includes(
+                        rule.parent.name,
+                      )
+                    )
+                      return;
+                    rule.selectors = rule.selectors.map((selector) => {
+                      if (!selector.includes(".")) return selector;
+                      if (selector.includes(".ant-")) return selector;
+                      return selector.replace(
+                        /\.([a-zA-Z_][a-zA-Z0-9_-]*)/g,
+                        (match, className) => {
+                          if (className.startsWith("lsf-")) return match;
+                          if (className.startsWith("ant-")) return match;
+                          return `.lsf-${className}`;
+                        },
+                      );
+                    });
+                  });
+                },
+              });
+              return { ...prevOptions, plugins };
+            },
+          };
+        }
       });
 
       const insertions = [];

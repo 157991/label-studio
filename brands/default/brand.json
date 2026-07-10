@@ -1,0 +1,35 @@
+{
+  "brand": {
+    "name": "智能标注平台",
+    "slug": "smart-label",
+    "domain": "label.smartai.cn",
+    "support_email": "support@smartai.cn"
+  },
+
+  "colors": {
+    "primary": "#2D8CF0"
+  },
+
+  "assets": {
+    "logo_svg": "logo.svg",
+    "logo_dark_svg": "logo-dark.svg",
+    "favicon_ico": "favicon.ico",
+    "favicon_png": "favicon.png"
+  },
+
+  "i18n": {
+    "enabled": true,
+    "default_language": "zh-CN",
+    "translations_file": "zh-CN.json"
+  },
+
+  "links": {
+    "replace": {
+      "labelstud.io": "label.smartai.cn",
+      "humansignal.com": "smartai.cn",
+      "github.com/HumanSignal": "github.com/15799"
+    },
+    "remove_branding": true,
+    "remove_external_docs": false
+  }
+}
