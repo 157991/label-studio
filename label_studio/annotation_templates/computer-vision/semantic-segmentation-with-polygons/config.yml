@@ -1,6 +1,6 @@
-title: Semantic Segmentation with Polygons
+title: 多边形语义分割
 type: community
-group: Computer Vision
+group: 计算机视觉
 order: 1
 image: /static/templates/semantic-segmentation-with-polygons.png
 details: |

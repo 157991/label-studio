@@ -1,6 +1,6 @@
-title: Video Object Tracking
+title: 视频目标跟踪
 type: community
-group: Videos
+group: 视频
 image: /static/templates/video-object-tracking.png
 details: |
   <h1>Object tracking in video with bounding boxes</h1>

@@ -20,7 +20,8 @@
   "i18n": {
     "enabled": true,
     "default_language": "zh-CN",
-    "translations_file": "zh-CN.json"
+    "translations_file": "zh-CN.json",
+    "source_i18n": true
   },
 
   "links": {

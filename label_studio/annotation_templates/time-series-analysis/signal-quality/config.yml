@@ -1,6 +1,6 @@
-title: Signal Quality
+title: 信号质量
 type: community
-group: Time Series Analysis
+group: 时间序列分析
 image: /static/templates/signal-quality.png
 details: |
   <h1>Rate signal quality</h1>

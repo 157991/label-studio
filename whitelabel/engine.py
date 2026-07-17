@@ -28,6 +28,8 @@ from .patches.templates import apply_template_patches
 from .patches.frontend import apply_frontend_patches
 from .patches.backend import apply_backend_patches
 from .patches.backend_i18n import apply_backend_localization
+from .patches.source_i18n import apply_source_localization
+from .patches.templates_i18n import apply_template_localization
 from .i18n.injector import inject_i18n
 
 
@@ -55,57 +57,77 @@ class WhitelabelEngine:
         }
 
         # 1. 静态资源替换 (logo, favicon 等)
-        print("[1/7] 替换品牌资源 (logo, favicon...)")
+        print("[1/9] 替换品牌资源 (logo, favicon...)")
         files = apply_asset_patches(self.ls_root, self.config, self.dry_run)
         stats["patches"]["assets"] = len(files)
         stats["modified_files"].extend(files)
 
         # 2. 品牌清理 (CSS注入隐藏 Heidi、AWS推广、外链等)
         if self.config.remove_branding:
-            print("[2/7] 清理官方推广内容 (Heidi/AWS/外链...)")
+            print("[2/9] 清理官方推广内容 (Heidi/AWS/外链...)")
             files = apply_brand_cleanup(self.ls_root, self.config, self.dry_run)
             stats["patches"]["cleanup"] = len(files)
             stats["modified_files"].extend(files)
         else:
-            print("[2/7] 跳过品牌清理 (未启用)")
+            print("[2/9] 跳过品牌清理 (未启用)")
             stats["patches"]["cleanup"] = 0
 
         # 3. 前端关键组件修改 (Logo引用、品牌名等)
-        print("[3/7] 修改前端关键组件...")
+        print("[3/9] 修改前端关键组件...")
         files = apply_frontend_patches(self.ls_root, self.config, self.dry_run)
         stats["patches"]["frontend"] = len(files)
         stats["modified_files"].extend(files)
 
+        # 3.5 前端源码级中文化 (基于翻译字典替换字符串)
+        if self.config.source_i18n and self.config.translations_file:
+            print("[3.5/9] 前端源码中文化 (Webhooks、页面文案...)")
+            files = apply_source_localization(self.ls_root, self.config, self.dry_run)
+            stats["patches"]["source_i18n"] = len(files)
+            stats["modified_files"].extend(files)
+        else:
+            print("[3.5/9] 跳过前端源码中文化 (未启用)")
+            stats["patches"]["source_i18n"] = 0
+
         # 4. 后端品牌信息修改
-        print("[4/7] 修改后端品牌信息...")
+        print("[4/9] 修改后端品牌信息...")
         files = apply_backend_patches(self.ls_root, self.config, self.dry_run)
         stats["patches"]["backend"] = len(files)
         stats["modified_files"].extend(files)
 
         # 5. 后端源码中文化 (列名、筛选、actions 等)
         if self.config.backend_i18n and self.config.translations_file:
-            print("[5/7] 后端源码中文化 (列名、筛选、actions...)")
+            print("[5/9] 后端源码中文化 (列名、筛选、actions...)")
             files = apply_backend_localization(self.ls_root, self.config, self.dry_run)
             stats["patches"]["backend_i18n"] = len(files)
             stats["modified_files"].extend(files)
         else:
-            print("[5/7] 跳过后端中文化 (未启用)")
+            print("[5/9] 跳过后端中文化 (未启用)")
             stats["patches"]["backend_i18n"] = 0
 
+        # 5.5 标注模板中文化 (分类名、模板标题)
+        if self.config.source_i18n and self.config.translations_file:
+            print("[5.5/9] 标注模板中文化 (分类、模板名...)")
+            files = apply_template_localization(self.ls_root, self.config, self.dry_run)
+            stats["patches"]["templates_i18n"] = len(files)
+            stats["modified_files"].extend(files)
+        else:
+            print("[5.5/9] 跳过模板中文化 (未启用)")
+            stats["patches"]["templates_i18n"] = 0
+
         # 6. Django 模板修改 (登录页、错误页等)
-        print("[6/7] 修改后端模板...")
+        print("[6/9] 修改后端模板...")
         files = apply_template_patches(self.ls_root, self.config, self.dry_run)
         stats["patches"]["templates"] = len(files)
         stats["modified_files"].extend(files)
 
         # 7. 注入运行时国际化 (增强版 MutationObserver)
         if self.config.i18n_enabled:
-            print("[7/7] 注入运行时双语切换 (增强版)...")
+            print("[7/9] 注入运行时双语切换 (增强版)...")
             files = inject_i18n(self.ls_root, self.config, self.dry_run)
             stats["patches"]["i18n"] = len(files)
             stats["modified_files"].extend(files)
         else:
-            print("[7/7] 跳过国际化 (未启用)")
+            print("[7/9] 跳过国际化 (未启用)")
             stats["patches"]["i18n"] = 0
 
         # 去重

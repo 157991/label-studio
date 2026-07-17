@@ -1,6 +1,6 @@
-title: "LLM Ranker"
+title: "LLM 排序器"
 type: community
-group: Generative AI
+group: 生成式 AI
 order: 4
 image: /static/templates/llm-ranker.png
 details: |

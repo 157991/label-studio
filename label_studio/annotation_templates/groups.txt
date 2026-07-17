@@ -1,11 +1,11 @@
-Computer Vision
-Natural Language Processing
-Audio/Speech Processing
-Conversational AI
-Chat
-Ranking & Scoring
-Structured Data Parsing
-Time Series Analysis
-Videos
-Generative AI
-Community Contributions
+计算机视觉
+自然语言处理
+音频/语音处理
+对话式 AI
+聊天
+排序与评分
+结构化数据解析
+时间序列分析
+视频
+生成式 AI
+社区贡献

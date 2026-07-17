@@ -1,6 +1,6 @@
-title: "Human Preference collection for RLHF"
+title: "RLHF 人类偏好收集"
 type: community
-group: Generative AI
+group: 生成式 AI
 order: 2
 image: /static/templates/generative-pairwise-human-preference.png
 details: |

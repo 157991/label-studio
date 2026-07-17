@@ -1,6 +1,6 @@
-title: Time Series Forecasting
+title: 时间序列预测
 type: community
-group: Time Series Analysis
+group: 时间序列分析
 image: /static/templates/time-series-forecasting.png
 details: |
   <h1>Prepare training data for time series forecasting models</h1>

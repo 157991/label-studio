@@ -1,6 +1,6 @@
-title: Medical Image Classification with Bounding Boxes
+title: 医学图像分类（边界框）
 type: community
-group: Computer Vision
+group: 计算机视觉
 image: /static/templates/medical-image-classification.png
 details: |
   <h1>Classify medical images and draw regions</h1>

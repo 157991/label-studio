@@ -1,6 +1,6 @@
-title: Intent Classification and Slot Filling
+title: 意图分类与槽位填充
 type: community
-group: Conversational AI
+group: 对话式 AI
 image: /static/templates/intent-classification-and-slot-filling.png
 details: |
   <h1>Build a task-oriented dialogue system by selecting dialogue intents and extracting slot entities</h1>

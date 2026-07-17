@@ -1,6 +1,6 @@
-title: Breast Cancer Mammogram Classification
+title: 乳腺癌钼靶影像分类
 type: community
-group: Community Contributions
+group: 社区贡献
 image: /static/templates/community-contributions/breast-cancer-mammogram-classification.jpg
 details: <h1>Breast Cancer Mammogram Classification</h1>
 source_repo: https://github.com/humanSignal/awesome-label-studio-config/tree/main/label-configs/breast-cancer-mammogram-classification

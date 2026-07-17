@@ -1,6 +1,6 @@
-title: Object Detection with Bounding Boxes
+title: 边界框目标检测
 type: community
-group: Computer Vision
+group: 计算机视觉
 order: 3
 image: /static/templates/object-detection-with-bounding-boxes.png
 details: |

@@ -48,6 +48,31 @@ SKIP_DIRS = [
     'tests',
 ]
 
+# BEM 元素/修饰符保护集合：
+# 这些常见的短单词常出现在 cn().elem("xxx") / cn().mod("xxx") 中，
+# 如果被翻译会导致 CSS 类名错位、样式失效
+BEM_ELEMENT_PROTECTED = {
+    # 结构类
+    "header", "body", "footer", "content", "sidebar", "main", "aside", "nav",
+    "section", "container", "wrapper", "wrap", "inner", "outer", "left", "right",
+    # 组件类
+    "button", "link", "input", "form", "menu", "item", "list", "icon", "image",
+    "label", "title", "text", "name", "value", "description", "summary", "detail",
+    "card", "panel", "modal", "dialog", "tabs", "tab", "table", "row", "col",
+    "cell", "grid", "page", "view", "field", "group", "control",
+    # 状态/修饰符
+    "active", "disabled", "selected", "checked", "open", "closed", "visible",
+    "hidden", "loading", "error", "success", "warning", "info", "primary",
+    # 大小
+    "small", "large", "medium", "tiny", "big",
+    # 其他常见短词
+    "add", "edit", "save", "copy", "delete", "remove", "close", "cancel",
+    "submit", "reset", "search", "filter", "sort", "more", "less",
+    "home", "docs", "settings", "profile", "account", "type", "path",
+    "host", "code", "text", "true", "false", "min", "max", "id",
+}
+
+
 
 def _should_skip(filepath: str) -> bool:
     """判断是否应该跳过该文件。"""
@@ -66,6 +91,38 @@ def _replace_in_string_literals(content: str, translations: dict[str, str]) -> s
     2. 对每个字符串内容检查是否在翻译字典中
     3. 如果匹配，替换字符串内容
     """
+    result = content
+
+    # 收集 BEM 调用（.elem/.mod/.block/.mix）里的字符串位置，这些不能翻译
+    # 因为它们是 CSS 类名的一部分，翻译会导致样式失效
+    bem_string_ranges: set[tuple[int, int]] = set()
+    bem_patterns = [
+        # .elem("xxx") 或 .elem('xxx')
+        r'\.elem\("(?:[^"\\]|\\.)*"\)',
+        r"\.elem\('(?:[^'\\]|\\.)*'\)",
+        # .mod("xxx") 或 .mod('xxx')
+        r'\.mod\("(?:[^"\\]|\\.)*"\)',
+        r"\.mod\('(?:[^'\\]|\\.)*'\)",
+        # .block("xxx") 或 .block('xxx')
+        r'\.block\("(?:[^"\\]|\\.)*"\)',
+        r"\.block\('(?:[^'\\]|\\.)*'\)",
+        # .mix("xxx") 或 .mix('xxx')
+        r'\.mix\("(?:[^"\\]|\\.)*"\)',
+        r"\.mix\('(?:[^'\\]|\\.)*'\)",
+    ]
+    for bem_pat in bem_patterns:
+        for m in re.finditer(bem_pat, result):
+            # 记录整个 BEM 调用的范围
+            bem_string_ranges.add((m.start(), m.end()))
+    
+    def _is_in_bem_call(start: int, end: int) -> bool:
+        """检查字符串位置是否在 BEM 调用的参数中"""
+        for bs, be in bem_string_ranges:
+            # 字符串在 BEM 调用的引号内
+            if start >= bs + 1 and end <= be - 1:
+                return True
+        return False
+
     # 匹配字符串字面量的正则（单引号、双引号、模板字符串）
     # 注意：这是简化版，不处理转义嵌套等极端情况
     patterns = [
@@ -77,7 +134,6 @@ def _replace_in_string_literals(content: str, translations: dict[str, str]) -> s
         (r"`((?:[^`\\]|\\.)*?)`", '`', '`'),
     ]
 
-    result = content
     # 为了避免多次替换互相干扰，先收集所有替换，最后一次性应用
     replacements: list[tuple[int, int, str]] = []  # (start, end, new_content)
 
@@ -95,6 +151,14 @@ def _replace_in_string_literals(content: str, translations: dict[str, str]) -> s
                 continue
             # 跳过变量引用（模板字符串里的 ${}）
             if '${' in inner:
+                continue
+            
+            # 跳过 BEM 调用里的字符串（CSS 类名，不能翻译）
+            if _is_in_bem_call(match.start(1), match.end(1)):
+                continue
+            
+            # 跳过 BEM 保护集合中的单词
+            if inner.lower() in BEM_ELEMENT_PROTECTED:
                 continue
             
             # 精确匹配

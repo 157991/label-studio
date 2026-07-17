@@ -1,6 +1,6 @@
-title: Keypoint Labeling
+title: 关键点标注
 type: community
-group: Computer Vision
+group: 计算机视觉
 order: 10000
 image: /static/templates/keypoints.png
 details: |

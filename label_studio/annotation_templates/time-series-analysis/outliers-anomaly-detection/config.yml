@@ -1,6 +1,6 @@
-title: Outliers & Anomaly Detection
+title: 异常值与异常检测
 type: community
-group: Time Series Analysis
+group: 时间序列分析
 image: /static/templates/outliers-anomaly-detection.png
 details: |
   <h1>Select time spans identifying outliers or anomalies on time series signals</h1>

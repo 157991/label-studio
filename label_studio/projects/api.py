@@ -112,7 +112,7 @@ class ProjectFilterSet(FilterSet):
 @method_decorator(
     name='get',
     decorator=extend_schema(
-        tags=['Projects'],
+        tags=['项目'],
         summary='List your projects',
         description="""
     Return a list of the projects that you've created.
@@ -217,7 +217,7 @@ class ProjectListAPI(generics.ListCreateAPIView):
 @method_decorator(
     name='get',
     decorator=extend_schema(
-        tags=['Projects'],
+        tags=['项目'],
         summary="List projects' counts",
         parameters=[
             *serializer_to_openapi_params(GetFieldsSerializer),
@@ -424,7 +424,7 @@ class ProjectAPI(generics.RetrieveUpdateDestroyAPIView):
 # @method_decorator(
 #     name='get',
 #     decorator=extend_schema(
-#         tags=['Projects'],
+#         tags=['项目'],
 #         summary='Get next task to label',
 #         description="""
 #     Get the next task for labeling. If you enable Machine Learning in
@@ -477,7 +477,7 @@ class LabelStreamHistoryAPI(generics.RetrieveAPIView):
 @method_decorator(
     name='post',
     decorator=extend_schema(
-        tags=['Projects'],
+        tags=['项目'],
         summary='Validate label config',
         description='Validate an arbitrary labeling configuration.',
         responses={
@@ -514,7 +514,7 @@ class LabelConfigValidateAPI(generics.CreateAPIView):
 @method_decorator(
     name='post',
     decorator=extend_schema(
-        tags=['Projects'],
+        tags=['项目'],
         operation_id='api_projects_validate_label_config',
         summary='Validate project label config',
         description='Determine whether the label configuration for a specific project is valid.',
@@ -598,7 +598,7 @@ class ProjectSummaryResetAPI(GetParentObjectMixin, generics.CreateAPIView):
 @method_decorator(
     name='get',
     decorator=extend_schema(
-        tags=['Projects'],
+        tags=['项目'],
         summary='Get project import status ',
         description="""
             Poll the status of an asynchronous project import operation.
@@ -676,7 +676,7 @@ class ProjectReimportAPI(generics.RetrieveAPIView):
 @method_decorator(
     name='delete',
     decorator=extend_schema(
-        tags=['Projects'],
+        tags=['项目'],
         summary='Delete all tasks',
         description='Delete all tasks from a specific project.',
         parameters=[
@@ -697,7 +697,7 @@ class ProjectReimportAPI(generics.RetrieveAPIView):
 @method_decorator(
     name='get',
     decorator=extend_schema(
-        tags=['Projects'],  # TODO: deprecate this endpoint in favor of tasks:tasks-list
+        tags=['项目'],  # TODO: deprecate this endpoint in favor of tasks:tasks-list
         summary='List project tasks',
         description="""
             Retrieve a paginated list of tasks for a specific project. For example, use the following cURL command:
@@ -713,7 +713,7 @@ class ProjectReimportAPI(generics.RetrieveAPIView):
                 description='A unique integer value identifying this project.',
             ),
         ]
-        + paginator_help('tasks', 'Projects')['parameters'],
+        + paginator_help('tasks', '项目')['parameters'],
         extensions={
             'x-fern-audiences': ['internal'],  # TODO: deprecate this endpoint in favor of tasks:tasks-list
         },

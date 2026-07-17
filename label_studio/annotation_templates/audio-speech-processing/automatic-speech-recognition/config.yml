@@ -1,6 +1,6 @@
-title: Automatic Speech Recognition
+title: 自动语音识别
 type: community
-group: Audio/Speech Processing
+group: 音频/语音处理
 image: /static/templates/automatic-speech-recognition.png
 details: |
   <h1>Transcribe the audio</h1>

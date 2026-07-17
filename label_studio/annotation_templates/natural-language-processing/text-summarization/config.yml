@@ -1,6 +1,6 @@
-title: Text Summarization
+title: 文本摘要
 type: community
-group: Natural Language Processing
+group: 自然语言处理
 image: /static/templates/text-summarization.png
 details: |
   <h1>Summarize in one sentence</h1>

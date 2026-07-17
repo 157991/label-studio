@@ -1,6 +1,6 @@
-title: Visual Question Answering
+title: 视觉问答
 type: community
-group: Computer Vision
+group: 计算机视觉
 image: /static/templates/visual-question-answering.png
 details: |
   <h1>Answer the questions related to what you see on the picture</h1>

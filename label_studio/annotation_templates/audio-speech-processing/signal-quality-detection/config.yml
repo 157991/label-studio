@@ -1,6 +1,6 @@
-title: Signal Quality Detection
+title: 信号质量检测
 type: community
-group: Audio/Speech Processing
+group: 音频/语音处理
 image: /static/templates/signal-quality-detection.png
 details: |
   <h1>Rate signal quality</h1>

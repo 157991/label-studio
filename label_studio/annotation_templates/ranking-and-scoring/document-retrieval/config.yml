@@ -1,6 +1,6 @@
-title: Document Retrieval
+title: 文档检索
 type: community
-group: Ranking & Scoring
+group: 排序与评分
 image: /static/templates/document-retrieval.png
 details: |
   <h1>Select document related to the query</h1>

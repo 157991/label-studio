@@ -1,6 +1,6 @@
-title: Fine-Tune an Agent without an LLM
+title: 无 LLM 的智能体微调
 type: enterprise
-group: Chat
+group: 聊天
 order: 3
 image: /static/templates/chat-eval.png
 details: |

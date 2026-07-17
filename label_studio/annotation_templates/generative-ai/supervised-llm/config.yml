@@ -1,6 +1,6 @@
-title: "Supervised Language Model Fine-tuning"
+title: "监督式语言模型微调"
 type: community
-group: Generative AI
+group: 生成式 AI
 order: 1
 image: /static/templates/generative-supervised-llm.png
 details: |

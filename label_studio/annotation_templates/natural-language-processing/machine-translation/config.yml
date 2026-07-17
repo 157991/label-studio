@@ -1,6 +1,6 @@
-title: Machine Translation
+title: 机器翻译
 type: community
-group: Natural Language Processing
+group: 自然语言处理
 image: /static/templates/machine-translation.png
 details: |
   <h1>Translate text from one language to another</h1>

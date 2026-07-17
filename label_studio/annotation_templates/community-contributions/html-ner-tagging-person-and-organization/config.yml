@@ -1,6 +1,6 @@
-title: HTML NER Tagging
+title: HTML 命名实体标注
 type: community
-group: Community Contributions
+group: 社区贡献
 image: /static/templates/community-contributions/html-ner-tagging-person-and-organization.jpg
 details: <h1>HTML NER Tagging</h1>
 source_repo: https://github.com/humanSignal/awesome-label-studio-config/tree/main/label-configs/html-ner-tagging-person-and-organization

@@ -1,6 +1,6 @@
-title: Fine-Tune an Agent with an LLM
+title: 基于 LLM 的智能体微调
 type: enterprise
-group: Chat
+group: 聊天
 order: 2
 image: /static/templates/chat-llm-eval.png
 details: |

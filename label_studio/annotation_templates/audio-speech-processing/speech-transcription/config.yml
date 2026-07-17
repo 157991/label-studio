@@ -1,6 +1,6 @@
-title: Speech Transcription
+title: 语音转写
 type: community
-group: Audio/Speech Processing
+group: 音频/语音处理
 image: /static/templates/thumbnail-audio-sentiment.png
 details: |
   <h1>Transcribe audio recordings with chunks</h1>

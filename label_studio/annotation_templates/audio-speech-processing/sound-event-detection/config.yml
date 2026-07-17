@@ -1,6 +1,6 @@
-title: Sound Event Detection
+title: 声音事件检测
 type: community
-group: Audio/Speech Processing
+group: 音频/语音处理
 image: /static/templates/sound-event-detection.png
 details: |
   <h1>Select audio span and classify sound event</h1>

@@ -1,6 +1,6 @@
-title: Speaker Segmentation
+title: 说话人分割
 type: community
-group: Audio/Speech Processing
+group: 音频/语音处理
 image: /static/templates/speaker-segmentation.png
 details: |
   <h1>Perform speaker segmentation / diarization task</h1>

@@ -1,6 +1,6 @@
-title: Video Classification
+title: 视频分类
 type: community
-group: Videos
+group: 视频
 image: /static/templates/video-classification.png
 details: |
   <h1>Classify video</h1>

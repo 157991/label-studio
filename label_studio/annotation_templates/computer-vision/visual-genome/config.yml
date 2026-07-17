@@ -1,6 +1,6 @@
-title: Visual Genome
+title: 视觉基因组标注
 type: community
-group: Computer Vision
+group: 计算机视觉
 image: /static/templates/visual-genome.png
 details: |
   <h1>Label different described features</h1>

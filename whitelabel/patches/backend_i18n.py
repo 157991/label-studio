@@ -26,7 +26,15 @@ SKIP_DIRS = [
     'migrations',
     'tests',
     '.git',
+    'feature_flags',  # 不能翻译，否则 VERSION_EDITION 判断会失效
 ]
+
+# 保护字符串：这些是代码逻辑的一部分，不能翻译
+PROTECTED_STRINGS = {
+    "Community",  # VERSION_EDITION 的值
+    "Enterprise",  # 企业版标识
+}
+
 
 
 def _should_skip(filepath: str) -> bool:
@@ -67,6 +75,10 @@ def _replace_in_python_strings(content: str, translations: dict[str, str]) -> st
                     continue
             # 跳过纯小写标识符（变量名的可能）
             if inner.islower() and ' ' not in inner and len(inner) < 20:
+                continue
+            
+            # 跳过受保护的字符串（代码逻辑的一部分）
+            if inner.strip() in PROTECTED_STRINGS:
                 continue
             
             translated = translations.get(inner)

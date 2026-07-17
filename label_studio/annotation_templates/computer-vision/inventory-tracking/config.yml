@@ -1,6 +1,6 @@
-title: Inventory Tracking
+title: 库存跟踪
 type: community
-group: Computer Vision
+group: 计算机视觉
 image: /static/templates/inventory-tracking.png
 details: |
   <h1>Label exact products on the shelves</h1>

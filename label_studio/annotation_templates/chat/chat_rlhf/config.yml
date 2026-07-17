@@ -1,6 +1,6 @@
-title: Evaluate Production Conversations for RLHF
+title: RLHF 生产对话评估
 type: enterprise
-group: Chat
+group: 聊天
 order: 5
 image: /static/templates/chat-rlhf.png
 details: |

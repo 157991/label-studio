@@ -1,6 +1,6 @@
-title: Activity Recognition
+title: 行为识别
 type: community
-group: Time Series Analysis
+group: 时间序列分析
 image: /static/templates/activity-recognition.png
 details: |
   <h1>Track and classify activity from sensors and IMU devices</h1>

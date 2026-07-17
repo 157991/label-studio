@@ -1,6 +1,6 @@
-title: OCR Labeling for PDFs
+title: PDF OCR 标注
 type: enterprise
-group: Computer Vision
+group: 计算机视觉
 order: 10
 image: /static/templates/pdf-ocr.png
 details: |

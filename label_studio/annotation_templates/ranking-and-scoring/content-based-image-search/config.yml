@@ -1,6 +1,6 @@
-title: Content-based Image Retrieval
+title: 基于内容的图像检索
 type: community
-group: Ranking & Scoring
+group: 排序与评分
 image: /static/templates/content-based-image-search.png
 details: |
   <h1>Select images related to the query image</h1>

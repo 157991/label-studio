@@ -1,6 +1,6 @@
-title: Automatic Speech Recognition using Segments
+title: 分段式自动语音识别
 type: community
-group: Audio/Speech Processing
+group: 音频/语音处理
 image: /static/templates/automatic-speech-recognition-using-segments.png
 details: |
   <h1>Segment voice activity and transcribe the audio</h1>

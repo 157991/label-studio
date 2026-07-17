@@ -1,6 +1,6 @@
-title: Conversational Analysis
+title: 对话分析
 type: community
-group: Audio/Speech Processing
+group: 音频/语音处理
 image: /static/templates/thumbnail-conversation-sentiment.png
 details: |
   <h1>Analyse dialogue utterances and markup facts and sentiment aspects</h1>

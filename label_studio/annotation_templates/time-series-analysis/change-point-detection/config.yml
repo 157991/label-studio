@@ -1,6 +1,6 @@
-title: Change Point Detection
+title: 变点检测
 type: community
-group: Time Series Analysis
+group: 时间序列分析
 image: /static/templates/change-point-detection.png
 details: |
   <h1>Identify changing points on time series signals</h1>
